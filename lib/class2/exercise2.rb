@@ -4,6 +4,6 @@
 #
 # TIP: I expect you to use a mathematical equation.
 #
+min_in_decade = (((60 * 24) * 365) * 10)
 
-puts (((60 * 24) * 365) * 10)
-
+puts min_in_decade
