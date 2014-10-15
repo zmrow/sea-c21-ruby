@@ -34,19 +34,22 @@
 #   Nana: BYE SWEETIE!
 puts 'Nana: HI SWEETIE! GIVE NANA A KISS!'
 input = gets.chomp
-count = 1 
+count = 1
 
-while count < 3 do
+while count <= 3
   if input == 'BYE'
+    break if count == 3
     count += 1
     puts "Nana: HOW'S SCHOOL GOING?"
     input = gets.chomp
   elsif input != input.upcase
     puts 'Nana: HUH?! SPEAK UP, SWEETIE!'
     input = gets.chomp
+    count = 1
   else
     puts "Nana: NOT SINCE #{rand(1930..1950)}!"
     input = gets.chomp
+    count = 1
   end
 end
 
