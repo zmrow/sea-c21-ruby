@@ -28,7 +28,25 @@
 
 # rubocop:disable MethodLength
 def old_school_roman_numeral(num)
-  num # change me
+  roman_num = ''
+  int = num
+
+  return 'M' if num == 1000
+
+  roman_num += 'D' if num >= 500
+
+  roman_num += 'C' * ((int / 100) % 5)
+  int = num
+
+  roman_num += 'L' unless ((int / 50) % 2).even?
+  int = num
+
+  roman_num += 'X' * ((int / 10) % 5)
+  int = num
+
+  roman_num += 'V' unless ((int / 5) % 2).even?
+
+  roman_num + 'I' * (int % 5)
 end
 
 input = ARGV[0].to_i
