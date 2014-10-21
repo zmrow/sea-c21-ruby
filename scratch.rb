@@ -1,23 +1,25 @@
 # The secret of getting ahead is getting started.
 # - Mark Twain
-#
-while true
-  puts 'What would you like to ask C to do?'
-  request = gets.chomp
+require 'yaml'
 
-  puts 'You say, "C, please ' + request + '"'
-
-  puts "C's response:"
-  puts '"Papa ' + request + '."'
-  puts '"Mama ' + request + '."'
-  puts '"Ruby ' + request + '."'
-  puts '"Nono ' + request + '."'
-  puts '"Emma ' + request + '."'
-  puts
-
-  if request == 'stop'
-    break
+def yaml_save object, filename
+  File.open filename, 'w' do |f|
+    f.write(object.to_yaml)
   end
 end
 
+def yaml_load filename
+  yaml_string = File.read filename
 
+  YAML::load yaml_string
+end
+
+test_array = ['Slick Shoes','Bully Blinders','Pinchers of Peril']
+
+filename = 'DatasGadgets.txt'
+
+yaml_save test_array, filename
+
+read_array = yaml_load filename
+
+puts(read_array == test_array)
