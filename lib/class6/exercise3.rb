@@ -27,15 +27,15 @@
 require 'yaml'
 
 def person
-  { name: "George Harrison",
+  { name: 'George Harrison',
     age: 58,
-    song: "Something",
-    url: "https://www.youtube.com/watch?v=UKAp-jRUp2o" 
+    song: 'Something',
+    url: 'https://www.youtube.com/watch?v=UKAp-jRUp2o'
   }
 end
 
 def database
-  File.absolute_path('../database.yml',__FILE__)
+  File.absolute_path('../database.yml', __FILE__)
 end
 
 def save
