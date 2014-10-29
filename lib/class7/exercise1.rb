@@ -75,7 +75,6 @@ class Integer
       end
     end
     roman_num
-
   end
 end
 

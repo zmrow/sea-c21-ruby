@@ -36,5 +36,23 @@
 # should stop and rethink your approach.
 
 class OrangeTree
+  attr_reader :fruit
+
+  def initialize(fruit = 50)
+    @fruit = fruit
+  end
+
+  def pick(amount = 1)
+    newfruit = @fruit - amount
+    OrangeTree.new(newfruit) unless @fruit < amount
+  end
+
+  def pick!(amount = 1)
+    @fruit -= amount unless @fruit < amount
+  end
+
+  def ==(other)
+    @fruit == other.fruit
+  end
   # replace me
 end
