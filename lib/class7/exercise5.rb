@@ -54,5 +54,4 @@ class OrangeTree
   def ==(other)
     @fruit == other.fruit
   end
-  # replace me
 end
